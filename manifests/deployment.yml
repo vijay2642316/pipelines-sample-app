@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vijaycovidapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vijaycovidapp
+  template:
+    metadata:
+      labels:
+        app: vijaycovidapp 
+    spec:
+      containers:
+        - name: vijaycovidapp 
+          image: covidvaccine.azurecr.io/vijaycovidapp
+          ports:
+          - containerPort: 8080
